@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio-commerce - Authentic Ethiopian Marketplace</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'><rect width='3' height='2' fill='%23EF3340'/><rect width='3' height='1.333' fill='%23FED141'/><rect width='3' height='.667' fill='%23009A44'/></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🇪🇹 Ethio-commerce</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒<span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Authentic Ethiopian Treasures</h1>
+                <p>From world-class premium coffee beans to intricately handwoven cultural attire, enjoy unparalleled excellence directly from local Ethiopian artisans.</p>
+                <a href="products.html" class="btn">Explore The Catalog</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <h2 class="section-title">Featured Cultural Handpicks</h2>
+            <p class="section-subtitle">Our top curated high-demand authentic items this week</p>
+            <div class="products-grid" id="featuredGrid"></div>
+            <div style="text-align: center; margin-top: 4.5rem;">
+                <a href="products.html" class="btn btn-primary">View Full Ethiopian Collection</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total"><span>Total:</span><span id="cartTotal">0.00 ETB</span></div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="checkoutViaTelebirr()">Checkout via Telebirr</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Ethio-commerce. All rights reserved.</p>
+        <p>📧 support@ethio-commerce.com | 📞 (+251) 988-510408 | Addis Ababa, Ethiopia</p>
+    </footer>
+
+    <script src="product.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductGrid('featuredGrid', 'all', 4);
+        });
+    </script>
+</body>
+</html>

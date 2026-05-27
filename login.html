@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ethio-commerce</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'><rect width='3' height='2' fill='%23EF3340'/><rect width='3' height='1.333' fill='%23FED141'/><rect width='3' height='.667' fill='%23009A44'/></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">🇪🇹 Ethio-commerce</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><div class="cart-icon" onclick="toggleCart()">🛒<span class="cart-count" id="cartCount">0</span></div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-wrapper">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="font-size: 2rem; font-weight:800;">Welcome Back</h2>
+                    <p style="color: #666;">Sign in to access your Ethio-commerce account</p>
+                </div>
+                <form onsubmit="event.preventDefault(); localStorage.setItem('isLoggedIn', 'true'); window.location.href='products.html';">
+                    <div class="form-group"><label>Email</label><input type="email" required></div>
+                    <div class="form-group"><label>Password</label><input type="password" maxlength="8" placeholder="Max 8 characters" required></div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h2>Shopping Cart</h2><button class="close-cart" onclick="toggleCart()">✕</button></div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter"><div class="cart-total"><span>Total:</span><span id="cartTotal">0.00 ETB</span></div><button class="btn btn-primary" style="width: 100%;" onclick="checkoutViaTelebirr()">Checkout via Telebirr</button></div>
+    </div>
+
+    <footer><p>© 2026 Ethio-commerce. All rights reserved.</p></footer>
+    <script src="product.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
