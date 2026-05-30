@@ -75,8 +75,14 @@ function toggleCart() {
     document.getElementById('cartSidebar').classList.toggle('open');
 }
 
-// Fixed Checkout Sequence: Removes all products in cart after successful processing
+// Fixed Checkout Sequence: Enforces login and removes all products after successful processing
 function checkoutViaTelebirr() {
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        alert("Authentication required. Please log in to proceed with secure checkout.");
+        window.location.href = 'login.html';
+        return;
+    }
+
     if (cart.length === 0) {
         alert("Your shopping cart is currently empty!");
         return;
