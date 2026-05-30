@@ -95,11 +95,3 @@ main { flex: 1; }
 
 footer { background: #111; color: #eee; text-align: center; padding: 3rem 2rem; margin-top: 5rem; border-top: 6px solid #EF3340; }
 footer p { font-size: 1rem; margin-bottom: 0.5rem; color: #bbb; }
-
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .cart-sidebar { width: 100%; right: -100%; }
-    .hero h1 { font-size: 2.4rem; }
-    .hero p { font-size: 1.1rem; }
-    .about-content { padding: 2rem; }
-}
